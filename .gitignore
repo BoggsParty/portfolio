@@ -3,7 +3,7 @@
 __pycache__
 myvenv
 db.sqlite3
-main/static
+
 mysite/settings.py
 .DS_Store
 /media/
