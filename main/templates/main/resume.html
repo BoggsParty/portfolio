@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+{% extends 'main/header-footer.html' %}
+{% block css %}
+    <link rel="stylesheet" href="/static/css/resume.css">
+{% endblock %}
+
+{% block content %}   
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 spacer"></div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row"> 
+            <div class="col-md-3 right">
+                <h2>Sean Ruffin</h2>
+                <h3>SeanRuffin14@gmail.com</h3>
+            </div>
+            <div class="col-md-6 vertical-line">
+                {% for content in content %}
+                    <h1>{{content.title}}</h1>
+                    {{content.content|safe}}
+                {% endfor %}
+            </div>
+            <div class="spacer"></div>
+            <div class="col-md-3">
+                <a href="/media/{{pdf.file}}" class="button">Download PDF</a>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

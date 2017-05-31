@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=Oswald|Roboto" rel="stylesheet"> 
+        <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/static/css/main.css">
+    </head>
+    <body>
+                    <div class="home-header">
+                        <h1>Sean Ruffin</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid row match-my-cols">
+            <div class="col-sm-1 no-padding" id="side-menu">
+                <ul>
+                    <li><a href="/about/">About</a></li>
+                    <li><a href="/contact/">Contact</a></li>
+                    <li><a href="/resume/">Resume</a></li>
+                    <li class="dropdown">
+                        <a href="/projects/" class="dropbtn">Projects</a>
+                        <div class="dropdown-content">
+                            <a href="/projects/design/">Design</a>
+                            <a href="/projects/built/">Built</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-sm-1"></div>
+            <div class="col-sm-9">
+                {%for images in images|slice:'1' %}
+                <img class="img-responsive" id="home-image" src="/media/{{images.image}}">
+                {% endfor %}
+            </div>
+            <div class="col-sm-1></div>
+        </div>
+    </body>
+</html>

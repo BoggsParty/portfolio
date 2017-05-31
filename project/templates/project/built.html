@@ -1,0 +1,20 @@
+{% extends 'main/header-footer.html' %}
+
+{% block css %}
+<link rel="stylesheet" href="/static/css/project.css">
+{% endblock %}
+
+{% block content %}
+    <div>
+        <h1>Built</h1>
+    </div>
+    <div class="container row">
+    {% for project in project %}
+        <div class="col-lg-3 height">
+            <a href="/projects/{{project.slug}}/"><img class="img-responsive" src="/media/{{project.main_image.image}}">
+            <h2>{{project.title}}</h2></a>
+        </div>    
+    {% endfor %}   
+    </div>
+        
+{% endblock %}

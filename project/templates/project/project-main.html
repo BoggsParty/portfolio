@@ -1,0 +1,29 @@
+{% extends 'main/header-footer.html' %}
+
+{% block css %}
+<link rel="stylesheet" href="/static/css/project.css">
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row center">
+        <div class="col-sm-12">
+            <h1>Projects</h1>
+        </div>
+        <div class="col-sm-6">
+            <h2>Design</h2>
+            <a href="/projects/design"><img class="img-responsive" src="/media/{{design_image.image}}"></a>
+        </div>
+        <div class="col-sm-6">
+            <h2>Built</h2>
+            <a href="/projects/built"><img class="img-responsive" src="/media/{{built_image.image}}"></a>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+{% endblock %}
