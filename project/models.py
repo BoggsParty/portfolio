@@ -21,7 +21,7 @@ class Project_Detail(models.Model):
     date = models.CharField(max_length=200, default='', help_text="Free text date description")
     duration = models.CharField(max_length=200, default='', help_text="Length of project")
     order = models.PositiveIntegerField(default=500, help_text="Order displayed.")
-    main_image = models.ForeignKey('Project_Image', on_delete=models.CASCADE, null=True)
+    #main_image = models.ForeignKey('Project_Image', on_delete=models.CASCADE, null=True)
     hidden = models.BooleanField(default=True, help_text="Ignore this, I don't know why it's here") 
     
     def __str__(self):
