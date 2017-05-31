@@ -20,9 +20,9 @@ class Project_Detail(models.Model):
     description = models.TextField(default='')
     date = models.CharField(max_length=200, default='', help_text="Free text date description")
     duration = models.CharField(max_length=200, default='', help_text="Length of project")
-    order = models.PositiveIntegerField(default=500, help_text="Order displayed. 1-3 will be shown on main page")
+    order = models.PositiveIntegerField(default=500, help_text="Order displayed.")
     main_image = models.ForeignKey('Project_Image', on_delete=models.CASCADE, null=True)
-    hidden = models.BooleanField(default=True, help_text="If hidden, will only be visible with URL (no links)") 
+    hidden = models.BooleanField(default=True, help_text="Ignore this, I don't know why it's here") 
     
     def __str__(self):
         return self.title
@@ -37,7 +37,7 @@ class Project_Image(models.Model):
     image = models.ImageField()
     title = models.CharField(max_length=200, default='')
     description = models.TextField(default='', blank=True)
-    project = models.ForeignKey('Project_Detail', on_delete=models.CASCADE, blank=True)
+    project = models.ForeignKey('Project_Detail', on_delete=models.CASCADE, blank=True, null=True)
     order = models.PositiveIntegerField(default=500, help_text="Order displayed. 1 is main image")
     design_main = models.BooleanField(default=False)
     built_main = models.BooleanField(default=False)
